@@ -1,0 +1,124 @@
+<!--
+	THIS EXAMPLE WAS DOWNLOADED FROM https://echarts.apache.org/examples/en/editor.html?c=bar-negative&code=PYBwLglsB2AEC8sDeAoWtJgDYFMBcya6GOAHmAQEQBqAhgE4S0DnAx8LABTACusAJhABmOejmjNaASgG1YAYwAWPAG5za8ngFseWWvznQ5AMVoAvcQdgBhBkYBfAIzk4tsMXrYda36L7CiUPRc4mBisABMAAwAjACssDiRUREALFIA3JQANEToAM48jgHkBADkZUQAvrnoYMDAWJAgBKjEGIwA5p2i5bSkEPlltcT9gwAKwBDQAfStecRgAJ4g-LBl-Yr6wADule1V1SO4PdD88-0GYLQEANplAIJ-w-t0jCzsZQC6R0SkDwN8ncFm12hgVmsymosDwcPtiId0F8RksAYNge1Qe1lqtyvJaAFOsB6Ethgt0GN8gAVCDyADWFzBBUUuwIQloWHyOHJsBqPKuN1g92i8ReZRFADYxSKAOzS2IADnlMQAnPLouqYuqIuqAMzq1LfBaI2DIogCgBaDS0GOIWMWEPK-SwEH4ojJTNRgIAkmcyAQoiN2vlrvQKLBAzzLAQYlEosag4QmTjIdN8q64Yn0F7Br63aQA1nYCGGOHI0zo7BY_GDkQzQVAjggUKQTyjFpIU9gB6wSnys56D32npHDgsIymZtWR1YUX0CBgOnIDBymmM_CDkXXCAtunm_b2kJgJpmxtG0MeXymQK7rqFRKAHQy7KRFVxB-ByIxGIPuIvmUSqkD4Ki-qQqjKD4qi-cQqj-uovneCq_i-Kp3g-EqgRK74YbAuoykhESgQqKoPjEPybq2TLtpCbxMF4Q4Ori6wDgxBTXPS5RUsA1xYKxsAjmOE5glOOwEGEsKXluWg7rQe5CYex48KeXKME2G4IkWN5Cp-AC0sFPi-OkKrqyGwHEcQmfBsA6REEqPlBsCoQ-qSGdEETAdBcRRKRhmpDKVlGRBLlVrGkHkRpdYoFUGRAA
+	⚠ Please be aware that this chart is not an official demo of Apache ECharts but is made by user-generated code.
+-->
+<!DOCTYPE html>
+<html lang="en" style="height: 100%">
+<head>
+  <meta charset="utf-8">
+</head>
+<body style="height: 100%; margin: 0">
+  <div id="container" style="height: 100%"></div>
+
+  
+  <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts@5/dist/echarts.min.js"></script>
+  
+  <!-- Uncomment this line if you want to dataTool extension
+  <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts@5/dist/extension/dataTool.min.js"></script>
+  -->
+  <!-- Uncomment this line if you want to use gl extension
+  <script type="text/javascript" src="https://echarts.apache.org/en/js/vendors/echarts-gl/dist/echarts-gl.min.js"></script>
+  -->
+  <!-- Uncomment this line if you want to echarts-stat extension
+  <script type="text/javascript" src="https://echarts.apache.org/en/js/vendors/echarts-stat/dist/ecStat.min.js"></script>
+  -->
+  <!-- Uncomment this line if you want to echarts-graph-modularity extension
+  <script type="text/javascript" src="https://echarts.apache.org/en/js/vendors/echarts-graph-modularity/dist/echarts-graph-modularity.min.js"></script>
+  -->
+  <!-- Uncomment this line if you want to use map
+  <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts@4.9.0/map/js/world.js"></script>
+  -->
+  <!-- Uncomment these two lines if you want to use bmap extension
+  <script type="text/javascript" src="https://api.map.baidu.com/api?v=3.0&ak=YOUR_API_KEY"></script>
+  <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts@5/dist/extension/bmap.min.js"></script>
+  -->
+
+  <script type="text/javascript">
+    var dom = document.getElementById('container');
+    var myChart = echarts.init(dom, null, {
+      renderer: 'canvas',
+      useDirtyRect: false
+    });
+    var app = {};
+    
+    var option;
+
+    option = {
+  title: {
+    text: "Variação (ou diferença) da chuva acumulada na Fazenda Carnaúba em relação ao ano anterior (entre 2015 e 2024);",
+    subtext: ''
+  },
+  tooltip: {
+    trigger: 'axis',
+    axisPointer: {
+      type: 'shadow'
+    }
+  },
+  legend: {
+    data: ['Ano', 'Variação']
+  },
+  xAxis: [
+    {
+      type: 'value'
+    }
+  ],
+  yAxis: [
+    {
+      type: 'category',
+      axisTick: {
+        show: false
+      },
+      data: ['2015', '2016', '2017', '2018', '2019', '2020', '2021', '2022', '2023', '2024']
+    }
+  ],
+  dataZoom: [
+    {
+      type: 'slider',
+      yAxisIndex: 0,
+      start: 0,
+      end: 100
+    },
+    {
+      type: 'inside',
+      yAxisIndex: 0,
+      start: 0,
+      end: 100
+    }
+  ],
+  series: [
+    {
+      name: 'Ano',
+      type: 'bar',
+      label: {
+        show: true,
+        position: 'inside'
+      },
+      emphasis: {
+        focus: 'series'
+      },
+      data: [386.7, 295.0, 211.5, 764.8, 497.9, 591.3, 388.5, 938.6, 465.6, 378.2, 489.1]
+    },
+    {
+      name: 'Variação',
+      type: 'bar',
+      stack: 'Total',
+      label: {
+        show: true
+      },
+      emphasis: {
+        focus: 'series'
+      },
+      data: [0, -91.7, -83.5, 553.3, -266.9, 93.4, -202.8, 550.1, -473, -87.4, 110.9]
+    },
+  ]
+};
+
+
+    if (option && typeof option === 'object') {
+      myChart.setOption(option);
+    }
+
+    window.addEventListener('resize', myChart.resize);
+  </script>
+</body>
+</html>
