@@ -1,6 +1,8 @@
 Visualização interativa de dados produzida durante o LAB 6
 
 Projeto 1: https://samssiq.github.io/visualizacao-de-dados/lab6-projeto1.html
+
+
 Projeto 2: https://samssiq.github.io/visualizacao-de-dados/lab6-projeto2.html
 
 (Obs: No projeto 2 o zoom da página deve ser diminuído a fim de melhorar a visualização no navegador)
