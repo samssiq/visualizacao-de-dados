@@ -12,4 +12,4 @@ O dataset utilizado fornece dados a respeito do volume de chuvas da Fazenda Carn
 
 ## Visualização interativa de dados produzida durante o LAB 7
 
- https://samssiq.github.io/visualizacao-de-dados/lab7-projeto.htmL
+ https://samssiq.github.io/visualizacao-de-dados/lab7-projeto.html
